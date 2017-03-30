@@ -1,0 +1,236 @@
+//Programming languages used: HTML, CSS, JavaScript
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grace's Random Hairstyle Picker</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <style>
+
+        body {
+            background-color: #b0c4de;
+        }
+
+        h2 {
+            font-family: 'Josefin Sans', sans-serif;
+            color: #ffffff;
+            text-align: center;
+            font-size: 36px;
+        }
+
+
+        .box {
+            border: 2px solid red;
+            width: 100px;
+            height: 100px;
+        }
+
+        img {
+            border: 2px solid blue;
+            width: 375px;
+            height: 300px;
+
+        }
+
+        .header {
+            background-color: #3d768a;
+            border:5px solid #74aab8;
+            float: left;
+            color: green;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 3px;
+        }
+
+        .top-nav {
+            border: 3px solid #74aab8;
+            width: 100%;
+            height: 40px;
+            float: left;
+            background-color: #3d768a;
+            margin-bottom: 5px;
+           }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 20px;
+            padding: 8px;
+            text-decoration: none;
+        }
+
+        /* Changes the color when link is hovered over */
+        li a:hover {
+            background-color: #68838B;
+        }
+
+
+        .main-content {
+            border: 2px solid #3d768a;
+            float: left;
+            overflow: hidden;
+            width: 100%;
+            height: 400px;
+        }
+
+        .footer {
+            background-color: #3d768a;
+            border:2px solid #74aab8;
+            width: 100%;
+            height: 25px;
+            float: left;
+            clear: both;
+        }
+
+        .option-buttons {
+            background-color: #3d768a;
+            border-radius:10px;
+            border:5px solid #74aab8;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size:28px;
+            padding:19px 32px;
+            text-decoration:none;
+            text-shadow:0px 0px 13px #ffffff;
+            position: relative;
+        }
+
+        #twist-button {
+            margin-top: 75px;
+            margin-left: 25px;
+
+
+        }
+
+        #stretched-button {
+            margin-top: 185px;
+            margin-left: 95px;
+
+        }
+
+        #textured-button {
+            margin-top: 75px;
+            margin-right: 25px;
+
+        }
+    </style>
+
+    <script language="JavaScript">
+        // Create the image arrays
+        var twistedImages = new Array();
+        twistedImages[0] = "Styles Requiring Twists/ChicTwistedUpdo.PNG";
+        twistedImages[1] = "Styles Requiring Twists/ChunkyTwistedUpdo.PNG";
+        twistedImages[2] = "Styles Requiring Twists/FlatTwistswithTendrils.PNG";
+        twistedImages[3] = "Styles Requiring Twists/PinnedTwists.PNG";
+        twistedImages[4] = "Styles Requiring Twists/PinnedTwistswithBangs.PNG";
+
+        var texturedImages = new Array();
+        texturedImages[0] = "Textured/BraidedPonytailUpdo.PNG";
+        texturedImages[1] = "Textured/BraidedPuff.PNG";
+        texturedImages[2] = "Textured/BraidedSide.PNG";
+        texturedImages[3] = "Textured/BraidOutDoublePonytail.PNG";
+        texturedImages[4] = "Textured/DoubleFlatTwistBuns.PNG";
+        texturedImages[5] = "Textured/FlatTwistTexturedUpdo.PNG";
+        texturedImages[6] = "Textured/PinnedTwistswithBangs.PNG";
+        texturedImages[7] = "Textured/SideFlatTwistUpdo.PNG";
+        texturedImages[8] = "Textured/ThreeCornrowBunswithBangs.PNG";
+        texturedImages[9] = "Textured/TwistedMessySideBun.PNG";
+        texturedImages[10] = "Textured/TwistswithHairDown.PNG";
+        texturedImages[11] = "Textured/TwoFlatTwistswithBangs.PNG";
+        texturedImages[12] = "Textured/WhitleyGilbertInspired.PNG";
+        texturedImages[13] = "Textured/BunWithBangs.PNG";
+        texturedImages[14] = "Textured/WindBlownUpdo.PNG";
+
+        var stretchedImages = new Array();
+        stretchedImages[0] = "Stretched/BandedPonytail.PNG";
+        stretchedImages[1] = "Stretched/BraidedRollandTuck.PNG";
+        stretchedImages[2] = "Stretched/CornrowedFrontwithFlatTwistBack.PNG";
+        stretchedImages[3] = "Stretched/EdgyTwistedUpdo.PNG";
+        stretchedImages[4] = "Stretched/ElegantFlatTwists.PNG";
+        stretchedImages[5] = "Stretched/HaloTwistProtectiveStyle.PNG";
+        stretchedImages[6] = "Stretched/InvertedPonytailUpdo.PNG";
+        stretchedImages[7] = "Stretched/LooseFlatTwistBun.PNG";
+        stretchedImages[8] = "Stretched/LowDoubleBun.PNG";
+        stretchedImages[9] = "Stretched/MessyFlatTwistPinUp.PNG";
+        stretchedImages[10] = "Stretched/MiddlePart2FlatTwists.PNG";
+        stretchedImages[11] = "Stretched/MilkmaidBraidwithScarf-Bandana.PNG";
+        stretchedImages[12] = "Stretched/SimpleTopKnot.PNG";
+        stretchedImages[13] = "Stretched/SixFlatTwists.PNG";
+        stretchedImages[14] = "Stretched/Straightback5CornrowsBun.PNG";
+        stretchedImages[15] = "Stretched/TwistedPinUp.PNG";
+        stretchedImages[16] = "Stretched/VoluminousUpdo.PNG";
+        stretchedImages[17] = "Stretched/TwistedBun.PNG";
+
+
+        // Create a function that chooses them randomly
+        function twistedRandomSelector() {
+            var rand = Math.floor(Math.random() * twistedImages.length);
+            window.location.href = "src/HairstylePage.html";
+            document.write('<img src="' + twistedImages[rand] + '" />');
+            };
+
+
+        function texturedRandomSelector() {
+            var rand = Math.floor(Math.random() * texturedImages.length);
+            document.write('<img src="' + texturedImages[rand] + '" />');
+
+            };
+
+        function stretchedRandomSelector () {
+            var rand = Math.floor(Math.random() * stretchedImages.length);
+            document.write('<img src="' + stretchedImages[rand] + '" />');
+            };
+
+        function goToTwistedPage() {
+            window.open('src/TwistedHairstylePage.html');
+            };
+
+        function goToStretchedPage() {
+            window.open('src/StretchedHairstylePage.html');
+            };
+
+        function goToTexturedPage() {
+            window.open('src/TexturedHairstylePage.html');
+            };
+
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h2>Grace's Random Hairstyle Picker</h2>
+    </div>
+    <div class="top-nav">
+        <ul>
+            <li><a href="Random Hairstyle Picker.html">Home    </a></li>
+            <li><a href="src/TwistedHairstylePage.html">   Twists   </a></li>
+            <li><a href="src/StretchedHairstylePage.html">   Stretched   </a></li>
+            <li><a href="src/TexturedHairstylePage.html">   Textured   </a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <input class="option-buttons" id="twist-button" type="button" value="Twists" onclick="twistedRandomSelector()"/>
+        <input class="option-buttons" id="stretched-button" type="button" value="Stretched" onclick="stretchedRandomSelector()"/>
+        <input class="option-buttons" id="textured-button" type="button" value="Textured" onclick="texturedRandomSelector()"/>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+</html>
